@@ -2,6 +2,8 @@
 
 A Codex skill for Product PMs who want to skip heavy PRDs and move faster from feature idea or backlog concept to a clear, demoable artifact.
 
+This repository contains the skill in a dedicated folder so Codex can install it from a GitHub path reliably.
+
 This skill helps with:
 
 - discussing a feature idea, backlog idea, or small prototype concept clearly
@@ -34,7 +36,14 @@ The skill should decide which files are needed based on the size and stage of th
 
 ```text
 Install this skill:
-https://github.com/risejs8938/idea-to-demo
+https://github.com/risejs8938/idea-to-demo/tree/main/idea-to-demo
+```
+
+If the user is already in Codex and wants a more explicit prompt:
+
+```text
+Please install this Codex skill from GitHub:
+https://github.com/risejs8938/idea-to-demo/tree/main/idea-to-demo
 ```
 
 ## Launch
