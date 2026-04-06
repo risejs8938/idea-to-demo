@@ -62,14 +62,15 @@ Do not default to writing a long PRD.
 
 Run in this order unless the user explicitly narrows scope:
 
-1. Identify what kind of idea this is.
-2. Clarify what the idea is really trying to prove.
-3. Define the smallest convincing version.
-4. Separate real logic from mocked/fake elements.
-5. Write the minimum useful artifacts for this idea size.
-6. Ask the user whether they want to move into build now.
-7. If yes, generate the build prompt and continue into build.
-8. Only after build succeeds, offer deployment guidance.
+1. Collect minimum product context first.
+2. Identify what kind of idea this is.
+3. Clarify what the idea is really trying to prove.
+4. Define the smallest convincing version.
+5. Separate real logic from mocked/fake elements.
+6. Write the minimum useful artifacts for this idea size.
+7. Ask the user whether they want to move into build now.
+8. If yes, generate the build prompt and continue into build.
+9. Only after build succeeds, offer deployment guidance.
 
 ## Phase 1: Product Discussion
 
@@ -90,7 +91,34 @@ The point of the discussion is not to collect requirements. The point is to disc
 - what the smallest convincing version is
 - what logic must survive even in a mocked artifact
 
-### First: Identify The Idea Size
+### First: Collect Minimum Context
+
+Never start with abstract product questions if the user has not given basic product context.
+
+Before discussing scope, ask for the minimum context needed to ask the right questions.
+
+Preferred context inputs:
+
+- product URL
+- current page URL
+- existing doc or note
+- screenshot
+- short written explanation of the product and where this idea fits
+
+Good default opener:
+
+- Before we narrow the idea, give me a little product context first.
+- Best options are a URL, a doc, a screenshot, or a short explanation of what product this idea belongs to.
+
+If helpful, offer this exact scaffold:
+
+- What product is this for?
+- What page, flow, or feature area does this idea belong to?
+- If you have it, send a URL, screenshot, or short doc link.
+
+If the user gives almost no context, do not continue into abstract strategy questions yet. First get enough context to anchor the discussion.
+
+### Second: Identify The Idea Size
 
 Start here unless the user already made it obvious:
 
@@ -105,41 +133,62 @@ Good default sequence:
 ### Clarify the problem
 
 - What problem are you actually trying to solve?
+  Ask this to get below the feature wording and find the real pain.
 - Who feels this problem most sharply?
+  The goal is to identify the user or audience that most needs this fixed.
 - Why is this worth showing now instead of later?
+  This helps separate a real validation need from a vague future idea.
 
 ### Clarify the demo goal
 
 - Who is this for?
+  This can be a user, teammate, manager, stakeholder, or customer.
 - If this works, what should they believe, approve, or understand after seeing it?
+  This is the most important outcome question. It defines what the artifact must prove.
 - What is the one core value this artifact must communicate?
+  Keep it to one thing, not a list of benefits.
 
 ### Clarify the flow
 
 - What is the most important user flow in this product?
+  We are looking for the smallest flow worth demonstrating, not every flow.
 - What is the key moment that makes this feel convincing?
+  Usually this is the moment where the product becomes obviously useful.
 - If we could only keep a few screens or steps, what would they be?
+  This forces scope discipline early.
 
 ### Clarify scope and realism
 
 - What can be mocked or faked for now?
+  Fake data and simplified UI are fine if they do not weaken the proof point.
 - What logic must feel real, even in a prototype?
+  This is the logic that cannot be hand-waved away without making the idea feel fake.
 - What should we intentionally skip in this version?
+  Name the cuts clearly so the first build stays small.
 
 ### Clarify build direction
 
 - Is this best shown as a landing-style flow, dashboard, lightweight web app, or interactive walkthrough?
+  Choose the lightest format that still makes the idea understandable.
 - Does this need to feel polished for external demo, or just clear enough for internal alignment?
+  This sets the quality bar before build starts.
 
 Use these questions to find the essence of the idea, not to collect every requirement.
+
+If the product context is still weak, ask for one more grounding input instead of escalating to more abstract questions.
 
 If the user is still fuzzy, use a smaller forcing set:
 
 1. What should someone believe after seeing this?
+   This is the fastest way to define the proof point.
 2. What is the one workflow that proves that?
+   Use one flow, not many.
 3. What can we cut right now without hurting the story?
+   If cutting it does not weaken the idea, it probably should go.
 4. What must be logically real, even if the rest is mocked?
+   This usually becomes the center of the logic doc.
 5. If we only had a few screens, what would they be?
+   This helps turn an idea into a buildable slice.
 
 ### Preferred Question Ladder
 
@@ -160,25 +209,35 @@ These are the most important question types in this skill. Prefer them over gene
 #### Problem essence
 
 - What is the real problem underneath this idea?
+- Ask this when the user is describing a solution before naming the pain clearly.
 - If we stripped away the proposed solution, what pain would still remain?
+- This helps test whether the idea is actually solving something real.
 - Why would someone care about this enough to change behavior?
+- If there is no behavior change, the value may not be sharp enough yet.
 
 #### Demo essence
 
 - What is the one thing this artifact must prove?
+- Keep this to one sentence if possible.
 - What is the moment in the flow where the product "clicks"?
+- This is usually the center of the prototype.
 - If this only had one persuasive scene, what would it be?
+- This helps reduce over-scoping.
 
 #### Decision essence
 
 - What decision is this demo meant to unlock?
+- This is especially useful for backlog ideas or internal features.
 - Who needs to be convinced?
+- Name the real audience, not the abstract user group only.
 - After seeing it, what should they say yes to?
+- This clarifies why the artifact exists.
 
 ### Anti-Patterns In Questioning
 
 Avoid these discussion mistakes:
 
+- asking abstract product questions before getting basic context
 - asking for a full feature list too early
 - asking low-level UX questions before the proof point is clear
 - asking implementation questions before scope is cut
@@ -186,6 +245,18 @@ Avoid these discussion mistakes:
 - continuing to ask questions after the main story is already clear
 
 When enough is clear, stop asking and synthesize.
+
+### Clarity Rule
+
+Do not ask sharp but context-free questions that sound smart and confuse the user.
+
+Prefer:
+
+- one clear question
+- one short explanation of why you are asking it
+- one small nudge if the user gets stuck
+
+Do not make the user guess what kind of answer you want.
 
 ## Phase 2: Scope Cutting
 
